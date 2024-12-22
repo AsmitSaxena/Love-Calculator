@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff85c2;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Love Calculator ❤️</h1>
+        <input type="text" id="maleName" placeholder="Enter Male Name">
+        <input type="text" id="femaleName" placeholder="Enter Female Name">
+        <button onclick="calculateLove()">Calculate Love</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            const maleName = document.getElementById('maleName').value.trim().toLowerCase();
+            const femaleName = document.getElementById('femaleName').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('result');
+
+            if ((maleName === 'asmit' && femaleName === 'aishna') || (maleName === 'aishna' && femaleName === 'asmit')) {
+                resultDiv.innerHTML = "<p>Your love is <strong>99%</strong>! ❤️</p><p>Special Note: You both are destined to be together! 🌟</p>";
+            } else if (maleName === 'asmit' || femaleName === 'aishna' || maleName === 'aishna' || femaleName === 'asmit') {
+                resultDiv.innerHTML = "<p>Sorry, no match found for one of you. 😢</p><p>Special Note: Asmit and Aishna are uniquely made for each other!</p>";
+            } else {
+                const randomLove = Math.floor(Math.random() * 100) + 1;
+                resultDiv.innerHTML = `<p>Your love is <strong>${randomLove}%</strong>! 💕</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
